@@ -32,6 +32,12 @@ variable "ssh_cidr" {
   default     = ""
 }
 
+variable "additional_ssh_cidrs" {
+  description = "Additional source CIDRs allowed to SSH to the nodes, such as a developer's public IP."
+  type        = list(string)
+  default     = []
+}
+
 variable "repo_url" {
   type    = string
   default = "https://github.com/rvinodrajendran/k8-cluster-automation.git"

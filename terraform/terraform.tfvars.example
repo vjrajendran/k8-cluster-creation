@@ -4,6 +4,10 @@ region               = "us-east-1"
 master_instance_type = "t3.medium"
 worker_instance_type = "t3.small"
 
+# Add a developer's public IPv4 CIDR here to allow SSH-tunnel access to master1.
+# Keep the list empty when only your own IP needs SSH access.
+additional_ssh_cidrs = []
+
 # Point at a feature branch while testing changes to the playbook
 repo_branch = "main"
 

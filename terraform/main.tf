@@ -60,11 +60,11 @@ resource "aws_security_group" "k8s" {
   vpc_id      = data.aws_vpc.default.id
 
   ingress {
-    description = "SSH from you"
+    description = "SSH from approved addresses"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [local.ssh_cidr]
+    cidr_blocks = distinct(concat([local.ssh_cidr], var.additional_ssh_cidrs))
   }
 
   ingress {
