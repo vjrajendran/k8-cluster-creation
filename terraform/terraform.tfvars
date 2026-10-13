@@ -4,7 +4,6 @@ region               = "us-east-1"
 master_instance_type = "t3.medium"
 worker_instance_type = "t3.medium"
 
-# Point at a feature branch while testing changes to the playbook
-repo_branch = "feature/terraform"
+repo_branch = "main"
 
 # aws_profile = "ps-sandbox"
